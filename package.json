@@ -1,0 +1,51 @@
+{
+  "name": "feishu-bot",
+  "version": "0.0.1",
+  "description": "feishu-bot",
+  "husky": {
+    "hooks": {
+      "pre-commit": "eslint --fix"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "src/**/*.{less,vue}": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "start": "echo \"Error: no test specified\" && exit ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jyehn/starter-javascript"
+  },
+  "author": "jamhsiao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jyehn/starter-javascript/issues"
+  },
+  "homepage": "https://github.com/jyehn/starter-javascript",
+  "dependencies": {
+    "@larksuiteoapi/allcore": "^1.0.14",
+    "@supabase/supabase-js": "^1.35.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.8.2",
+    "eslint-plugin-jsdoc": "^39.3.6",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.10.0"
+  }
+}

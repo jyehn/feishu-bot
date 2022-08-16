@@ -1,0 +1,26 @@
+{
+    "extends": "stylelint-config-standard",
+    "plugins": [
+      "stylelint-order"
+    ],
+    "rules": {
+      "color-hex-length": "long",
+      "color-hex-case": "upper",
+      "comment-empty-line-before": [
+        "always",
+        {
+          "ignore": [
+            "stylelint-commands"
+          ],
+          "except": [
+            "first-nested"
+          ]
+        }
+      ],
+      "selector-max-empty-lines": 1,
+      "no-descending-specificity": null,
+      "font-family-no-missing-generic-family-keyword": null,
+      "value-list-comma-space-after": "always-single-line",
+      "max-line-length": 80
+    }
+  }
