@@ -1,33 +1,43 @@
-'use strict'
+"use strict";
 
-const Koa = require('koa')
-const bodyParser = require('koa-bodyparser')
-const cors = require('@koa/cors')
+const Koa = require("koa");
+const bodyParser = require("koa-bodyparser");
+const cors = require("@koa/cors");
+const mongo = require("koa-mongo");
+const config = require("./config");
+const router = require("./src/routes/routes");
+const { loggerMiddleware } = require("./src/middlewares/logger");
+const { errorHandler, responseHandler } = require("./src/middlewares/response");
+const { corsHandler } = require("./src/middlewares/cors");
+const { scheduleAll } = require("./src/schedulers");
+const app = new Koa();
 
-const config = require('./config')
-const rootRoutes = require('./src/routes/routes')
-const { loggerMiddleware } = require('./src/middlewares/logger')
-const { errorHandler, responseHandler } = require('./src/middlewares/response')
-const { corsHandler } = require('./src/middlewares/cors')
+//scheduler jobs
+scheduleAll();
 
-const app = new Koa()
-
+// mongo
+const { uri } = config.mongoDB;
+app.use(
+  mongo({
+    uri,
+  }),
+);
 // cors
-app.use(cors(corsHandler))
+app.use(cors(corsHandler));
 
 // Logger
-app.use(loggerMiddleware)
+app.use(loggerMiddleware);
 
 // Error Handler
-app.use(errorHandler)
+app.use(errorHandler);
 
 // Global Middlewares
-app.use(bodyParser())
+app.use(bodyParser());
 
 // Routes
-app.use(rootRoutes.routes())
+app.use(router.routes());
 
 // Response
-app.use(responseHandler)
+app.use(responseHandler);
 
-module.exports = app
+module.exports = app;
