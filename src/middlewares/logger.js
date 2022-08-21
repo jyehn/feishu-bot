@@ -3,7 +3,7 @@
 const fs = require('fs')
 const path = require('path')
 const log4js = require('log4js')
-const config = require('../config')
+const config = require('../../config')
 
 // 这个是判断是否有logs目录，没有就新建，用来存放日志
 const logsDir = path.parse(config.logPath).dir

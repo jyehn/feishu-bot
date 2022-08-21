@@ -1,7 +1,8 @@
 'use strict'
 
 const Koa = require('koa')
-const bodyParser = require('koa-bodyparser')()
+const bodyParser = require('koa-bodyparser')
+const cors = require('@koa/cors')
 
 const config = require('./config')
 const rootRoutes = require('./src/routes/routes')
@@ -21,10 +22,10 @@ app.use(loggerMiddleware)
 app.use(errorHandler)
 
 // Global Middlewares
-app.use(bodyParser)
+app.use(bodyParser())
 
 // Routes
-app.use(routeRoutes.routes())
+app.use(rootRoutes.routes())
 
 // Response
 app.use(responseHandler)

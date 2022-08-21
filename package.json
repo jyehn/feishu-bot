@@ -32,9 +32,13 @@
   },
   "homepage": "https://github.com/jyehn/starter-javascript",
   "dependencies": {
+    "@koa/cors": "^3.4.1",
     "@larksuiteoapi/allcore": "^1.0.14",
     "@supabase/supabase-js": "^1.35.6",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.1",
     "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
     "koa-router": "^12.0.0",
     "log4js": "^6.6.1"
   },
