@@ -19,8 +19,7 @@
     ]
   },
   "scripts": {
-    "start": "echo \"Error: no test specified\" && exit ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -34,7 +33,10 @@
   "homepage": "https://github.com/jyehn/starter-javascript",
   "dependencies": {
     "@larksuiteoapi/allcore": "^1.0.14",
-    "@supabase/supabase-js": "^1.35.6"
+    "@supabase/supabase-js": "^1.35.6",
+    "koa": "^2.13.4",
+    "koa-router": "^12.0.0",
+    "log4js": "^6.6.1"
   },
   "devDependencies": {
     "eslint": "^8.21.0",
