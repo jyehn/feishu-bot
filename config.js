@@ -32,5 +32,6 @@ module.exports = {
   axios: {
     cookies: process.env.LC_COOKIES,
     csrfToken: process.env.LC_CSRF_TOKEN,
+    userAgent: process.env.USER_AGENT,
   },
 };

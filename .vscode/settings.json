@@ -6,7 +6,7 @@
   "workbench.productIconTheme": "icons-carbon",
   "workbench.iconTheme": "file-icons",
   "workbench.fontAliasing": "antialiased",
-  "editor.fontFamily": "Fira Code,Input Mono,  monospace",
+  "editor.fontFamily": "Fira Code Retina,Input Mono,  monospace",
   "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'zero'",
 
   // Editor

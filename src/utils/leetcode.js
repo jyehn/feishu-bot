@@ -81,5 +81,38 @@ const leetcode = {
       return error;
     }
   },
+  getSubmissions: async (lastKey, limit, offset, questionSlug) => {
+    const url = graphqlQlUrl;
+    try {
+      const res = await axios.post(url, {
+        operationName: "submissions",
+        query: queryConfig.submissions,
+        variables: {
+          lastKey,
+          limit,
+          offset,
+          questionSlug,
+        },
+      });
+      return res.data;
+    } catch (error) {
+      return error;
+    }
+  },
+  getmySubmissionDetail: async id => {
+    const url = graphqlQlUrl;
+    try {
+      const res = await axios.post(url, {
+        operationName: "mySubmissionDetail",
+        query: queryConfig.mySubmissionDetail,
+        variables: {
+          id,
+        },
+      });
+      return res.data;
+    } catch (error) {
+      return error;
+    }
+  },
 };
 module.exports = leetcode;

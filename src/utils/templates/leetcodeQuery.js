@@ -161,6 +161,74 @@ const queryConfig = {
     } 
   } 
   `,
+  submissions: `
+  query submissions($offset: Int!, $limit: Int!, $lastKey: String, $questionSlug: String!, $markedOnly: Boolean, $lang: String) {
+    submissionList(offset: $offset, limit: $limit, lastKey: $lastKey, questionSlug: $questionSlug, markedOnly: $markedOnly, lang: $lang) {
+      lastKey
+      hasNext
+      submissions {
+        id
+        statusDisplay
+        lang
+        runtime
+        timestamp
+        url
+        isPending
+        memory
+        submissionComment {
+          comment
+          flagType
+          __typename
+        }
+        __typename
+      }
+      __typename
+    }
+  }
+  `,
+  mySubmissionDetail: `
+  query mySubmissionDetail($id: ID!) {
+    submissionDetail(submissionId: $id) {
+      id
+      code
+      runtime
+      memory
+      rawMemory
+      statusDisplay
+      timestamp
+      lang
+      isMine
+      passedTestCaseCnt
+      totalTestCaseCnt
+      sourceUrl
+      question {
+        titleSlug
+        title
+        translatedTitle
+        questionId
+        __typename
+      }
+      ... on GeneralSubmissionNode {
+        outputDetail {
+          codeOutput
+          expectedOutput
+          input
+          compileError
+          runtimeError
+          lastTestcase
+          __typename
+        }
+        __typename
+      }
+      submissionComment {
+        comment
+        flagType
+        __typename
+      }
+      __typename
+    }
+  }
+  `,
 };
 
 module.exports = queryConfig;
