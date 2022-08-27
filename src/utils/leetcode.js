@@ -114,5 +114,20 @@ const leetcode = {
       return error;
     }
   },
+  getquestionData: async titleSlug => {
+    const url = graphqlQlUrl;
+    try {
+      const res = await axios.post(url, {
+        operationName: "questionData",
+        query: queryConfig.questionData,
+        variables: {
+          titleSlug,
+        },
+      });
+      return res.data;
+    } catch (error) {
+      return error;
+    }
+  },
 };
 module.exports = leetcode;

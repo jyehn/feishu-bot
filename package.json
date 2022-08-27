@@ -34,7 +34,9 @@
   "dependencies": {
     "@koa/cors": "^3.4.1",
     "@larksuiteoapi/allcore": "^1.0.14",
+    "@larksuiteoapi/node-sdk": "^1.0.7",
     "@supabase/supabase-js": "^1.35.6",
+    "@vscode/vscode-languagedetection": "^1.0.21",
     "axios": "^0.27.2",
     "crypto": "^1.0.1",
     "dotenv": "^16.0.1",
